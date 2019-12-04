@@ -1,6 +1,6 @@
 {
   "name": "console-log-overwrite",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Control website log, open when developing but close on release, and support open when relase if you need.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "log switch"
   ],
   "author": "jyjin",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jyjin/console-log-overwrite/issues"
   },

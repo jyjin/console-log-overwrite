@@ -55,6 +55,5 @@ sessionStorage.removeItem('__debugger')
 参数|是否必须|默认值|说明
 ---|:--:|---:|---
 env|Y|无|环境变量
-envCompare|Y|无|环境变量
-env|Y|无|需要屏蔽的环境变量值，如：'prod'
+envCompare|Y|无|需要屏蔽的环境变量值，如：'prod'
 keygen|内容|无|生产环境需要查看时的秘钥
