@@ -1,0 +1,11 @@
+{
+  "name": "console-log-overwrite",
+  "version": "1.0.0",
+  "description": "Control website console log, log when developing but close on release, and support open release site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jyjin",
+  "license": "ISC"
+}
