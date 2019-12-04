@@ -1,6 +1,6 @@
 {
   "name": "console-log-overwrite",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Control website log, open when developing but close on release, and support open when relase if you need.",
   "main": "index.js",
   "scripts": {
