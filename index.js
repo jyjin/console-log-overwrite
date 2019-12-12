@@ -13,7 +13,11 @@
 exports.consoleLogOverwrite = function (envName, envValue, keygen) {
 
   if (envName === envValue) {
-    sessionStorage.removeItem('__debugger')
+    if (sessionStorage.getItem('__debugger') === keygen) {
+      // 测试后门
+    } else {
+      sessionStorage.removeItem('__debugger')
+    }
   } else {
     sessionStorage.setItem('__debugger', keygen)
   }
