@@ -24,8 +24,13 @@ exports.consoleLogOverwrite = function (envName, envValue, keygen) {
 
   var getStackTrace = function () {
     var obj = {};
-    Error.captureStackTrace(obj, getStackTrace);
-    return obj.stack;
+    if (Error && Error.captureStackTrace) {
+      Error.captureStackTrace(obj, getStackTrace);
+      return obj.stack;
+    } else {
+      // 排除火狐不兼容
+      return null
+    }
   };
   var log = console.log;
   console.log = function () {
@@ -34,6 +39,10 @@ exports.consoleLogOverwrite = function (envName, envValue, keygen) {
       return
     }
     var stack = getStackTrace() || ""
+    if (!stack) {
+      log.apply(console, [...arguments])
+      return
+    }
     var matchResult = stack.match(/\(.*?\)/g) || []
     var line = matchResult[1] || ""
     for (var i in arguments) {
