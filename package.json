@@ -1,6 +1,6 @@
 {
   "name": "console-log-overwrite",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Control website log, open when developing but close on release, and support open when relase if you need.",
   "main": "index.js",
   "scripts": {
@@ -23,3 +23,4 @@
   },
   "homepage": "https://github.com/jyjin/console-log-overwrite#readme"
 }
+01

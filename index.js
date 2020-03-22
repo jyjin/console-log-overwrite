@@ -38,16 +38,19 @@ exports.consoleLogOverwrite = function (envName, envValue, keygen) {
     if (sessionStorage.getItem('__debugger') !== keygen) {
       return
     }
+    var argsArr = []
+    for (var i = 0; i < arguments.length; i++) {
+      argsArr.push(arguments[i])
+    }
+
     var stack = getStackTrace() || ""
     if (!stack) {
-      log.apply(console, [...arguments])
+      log.apply(console, argsArr)
       return
     }
     var matchResult = stack.match(/\(.*?\)/g) || []
     var line = matchResult[1] || ""
-    for (var i in arguments) {
-    }
-    log.apply(console, [...arguments, '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t' + line.replace("(", "").replace(")", "")])
+    log.apply(console, argsArr.concat(['\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t' + line.replace("(", "").replace(")", "")]))
 
   };
 }
